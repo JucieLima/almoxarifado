@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #159A9C;" HBox.hgrow="ALWAYS">
+         <children>
+            <Label text="ALMOXARIFADO" textFill="WHITE">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="30.0" prefWidth="200.0" />
+            <Label>
+               <graphic>
+                  <FontIcon iconColor="#deefe7" iconLiteral="mdi2c-cube-scan" iconSize="120" />
+               </graphic>
+            </Label>
+            <Pane layoutX="10.0" layoutY="268.0" prefHeight="30.0" prefWidth="200.0" />
+            <Label layoutX="67.0" layoutY="187.0" text="Sistema de de Gestão de Almoxarifado" textFill="#deefe7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #DEEFE7;" HBox.hgrow="ALWAYS">
+         <children>
+            <Label alignment="CENTER" layoutX="151.0" layoutY="121.0" text="LOGIN" textFill="#002333" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <FontIcon iconColor="#002333" iconLiteral="mdi2a-account" iconSize="30" layoutX="60.0" layoutY="262.0" AnchorPane.leftAnchor="60.0" />
+            <TextField fx:id="texetFieldEmail" layoutX="100.0" layoutY="232.0" promptText="Email" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textFieldPassword" layoutX="100.0" layoutY="291.0" onAction="#handleLoginButton" promptText="Senha" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <FontIcon iconColor="#002333" iconLiteral="mdi2f-form-textbox-password" iconSize="30" layoutX="60.0" layoutY="321.0" AnchorPane.leftAnchor="60.0" />
+            <Button layoutX="60.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleLoginButton" text="ENTRAR" textFill="#002333" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="180.0" layoutY="552.0" onMouseClicked="#handleForgoutPassword" text="Esqueceu a senha? Clique aqui." AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <TextFlow fx:id="loginMsg" layoutX="60.0" layoutY="424.0" prefHeight="76.0" prefWidth="330.0" style="-fx-background-color: #159A9C; -fx-padding: 15px;" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ATENÇÃO! Dados não conferem. Verifique email e senha.">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </TextFlow>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
