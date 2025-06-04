@@ -13,8 +13,7 @@
 <?import javafx.scene.text.TextFlow?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infra.javafx.controller.LoginController">
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #159A9C;" HBox.hgrow="ALWAYS">
          <children>
@@ -30,7 +29,7 @@
                </graphic>
             </Label>
             <Pane layoutX="10.0" layoutY="268.0" prefHeight="30.0" prefWidth="200.0" />
-            <Label layoutX="67.0" layoutY="187.0" text="Sistema de de Gestão de Almoxarifado" textFill="#deefe7">
+            <Label layoutX="67.0" layoutY="187.0" text="Sistema de Gestão de Almoxarifado" textFill="#deefe7">
                <font>
                   <Font size="18.0" />
                </font>
@@ -45,7 +44,7 @@
                </font>
             </Label>
             <FontIcon iconColor="#002333" iconLiteral="mdi2a-account" iconSize="30" layoutX="60.0" layoutY="262.0" AnchorPane.leftAnchor="60.0" />
-            <TextField fx:id="texetFieldEmail" layoutX="100.0" layoutY="232.0" promptText="Email" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
+            <TextField fx:id="textFieldEmail" layoutX="100.0" layoutY="232.0" promptText="Email" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -61,7 +60,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="180.0" layoutY="552.0" onMouseClicked="#handleForgoutPassword" text="Esqueceu a senha? Clique aqui." AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Label alignment="CENTER" layoutX="180.0" layoutY="552.0" onMouseClicked="#handleForgotPassword" text="Esqueceu a senha? Clique aqui." AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font size="16.0" />
                </font>
