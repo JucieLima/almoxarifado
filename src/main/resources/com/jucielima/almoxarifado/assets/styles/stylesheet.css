@@ -1,6 +1,15 @@
 .bg_dashboard{
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,#002333, #159A9C);
 }
+.container_style{
+    -fx-background-color: rgba(179, 189, 200, 0.3);
+    -fx-background-radius: 15;
+}
+.shadow{
+    -fx-effect: dropShadow(gaussian, #002333, 20, 0, 5, 10);
+}
+
+/***** APP BAR *****/
 .menu_app_bar{
     -fx-background-color: transparent;
 }
@@ -10,6 +19,7 @@
     -fx-background-color: #159A9C;
     -fx-background-radius: 10;
 }
+.menu_app_bar .menu .menu-item:focused,
 .menu_app_bar .menu .menu-item:hover{
     -fx-background-color: #159A9C;
 }
@@ -17,10 +27,9 @@
 .dashboard_app_bar{
     -fx-effect: dropShadow(gaussian, rgba(0,0,0, 0.3), 20, 0, 0, 10);
 }
-.container_style{
-    -fx-background-color: rgba(179, 189, 200, 0.3);
-    -fx-background-radius: 15;
-}
+
+
+/***** SIDE BAR *****/
 .dashboard_menu_item_first{
     -fx-background-color: #159A9C;
     -fx-background-radius: 15 15 0 0;
@@ -38,4 +47,40 @@
 .dashboard_menu_item_last{
     -fx-background-color: rgba(179, 189, 200, 0.4);
     -fx-background-radius: 0 0 15 15;
+}
+
+/***** GRÁFICOS *****/
+.line_chart .chart-plot-background{
+    -fx-background-color: transparent;
+}
+.line_chart .default-color0{
+    -fx-stroke: #002333;
+    -fx-background-color: #002333;
+}
+.line_chart .default-color1{
+    -fx-stroke: #41cfd1;
+    -fx-background-color: #41cfd1;
+}
+.line_chart .default-color2{
+    -fx-stroke: #159A9C;
+    -fx-background-color: #159A9C;
+}
+.pie_chart .text{
+    -fx-fill: #fff;
+}
+
+/***** TABELAS *****/
+.table_view{
+    -fx-base: #002333;
+    -fx-accent: #159A9C;
+    -fx-focus-color: #159A9C;
+}
+.table_view .cell{
+    -fx-cell-size: 30;
+    -fx-padding: 5;
+    -fx-font-size: 14;
+}
+.table_view .label{
+    -fx-font-size: 16;
+    -fx-padding: 8;
 }
