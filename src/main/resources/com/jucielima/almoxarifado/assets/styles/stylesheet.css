@@ -84,3 +84,9 @@
     -fx-font-size: 16;
     -fx-padding: 8;
 }
+
+/***** FORMULÁRIOS *****/
+.forms{
+    -fx-accent: #159A9C;    
+    -fx-focus-color: #159A9C;
+}
