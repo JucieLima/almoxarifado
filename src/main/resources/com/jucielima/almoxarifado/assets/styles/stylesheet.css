@@ -90,3 +90,58 @@
     -fx-accent: #159A9C;    
     -fx-focus-color: #159A9C;
 }
+
+/***** PAGINAÇÃO *****/
+/* esquema de cores base*/
+.pagination{
+    -fx-base: #002333;
+}
+/* Espaçamento entre os botões */
+.pagination > .pagination-control > .control-box {
+    -fx-spacing: 3;
+}
+
+/* Você pode controlar o tamanho dos botões aqui */
+.pagination > .pagination-control > .control-box > .number-button,
+.pagination > .pagination-control > .control-box > .bullet-button,
+.pagination > .pagination-control > .control-box > .left-arrow-button,
+.pagination > .pagination-control > .control-box > .right-arrow-button {
+    -fx-background-insets: 0, 1;
+    -fx-background-color: lightgray, #DEEFE7;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-text-fill: #002333;
+    -fx-font-size: 14;
+}
+
+/* Cores no efeito hover */
+.pagination > .pagination-control > .control-box > .number-button:hover,
+.pagination > .pagination-control > .control-box > .bullet-button:hover,
+.pagination > .pagination-control > .control-box > .left-arrow-button:hover,
+.pagination > .pagination-control > .control-box > .right-arrow-button:hover {
+    -fx-background-insets: 0;
+    -fx-background-color: lightgray, #002333;
+    -fx-text-fill: #FFF;
+}
+
+/* Cores na página selecionada */
+.pagination > .pagination-control > .control-box > .number-button:selected,
+.pagination > .pagination-control > .control-box > .bullet-button:selected{
+    -fx-background-insets: 0;
+    -fx-background-color: lightgray, #002333;
+    -fx-text-fill: white;
+}
+
+/* Cores das setas*/
+.pagination > .pagination-control .right-arrow,
+.pagination > .pagination-control .left-arrow{
+    -fx-background-color:  #002333;
+}
+.pagination > .pagination-control .right-arrow:hover,
+.pagination > .pagination-control .left-arrow:hover{
+    -fx-background-color:  white;
+}
+.pagination > .pagination-control .right-arrow-button:hover .right-arrow,
+.pagination > .pagination-control .left-arrow-button:hover .left-arrow{
+    -fx-background-color:  white;
+}
