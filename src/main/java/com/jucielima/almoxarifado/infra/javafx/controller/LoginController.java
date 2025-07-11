@@ -6,7 +6,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class LoginController {
 
     @FXML
