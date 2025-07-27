@@ -13,7 +13,7 @@
 <?import javafx.scene.text.TextFlow?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infra.javafx.controller.LoginController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.LoginController">
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #159A9C;" HBox.hgrow="ALWAYS">
          <children>

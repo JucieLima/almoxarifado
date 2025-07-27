@@ -1,4 +1,4 @@
-package com.jucielima.almoxarifado.infra.javafx.controller;
+package com.jucielima.almoxarifado.infrastructure.javafx.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
