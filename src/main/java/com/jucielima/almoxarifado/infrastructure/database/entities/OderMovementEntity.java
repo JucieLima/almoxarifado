@@ -16,13 +16,13 @@ public class OderMovementEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
     @Column(name = "type", nullable = false)
     private String type;
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
     @ManyToOne
-    @JoinColumn(name = "order", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "order_id", referencedColumnName = "id", nullable = false)
     private OderEntity order;
     @ManyToOne
     @JoinColumn(name = "storekeeper", referencedColumnName = "id", nullable = false)
