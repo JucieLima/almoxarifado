@@ -3,16 +3,10 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -20,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.DashboardController">
+<BorderPane fx:id="mainPane" prefHeight="800.0" prefWidth="1200.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.DashboardController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #002333;" styleClass="dashboard_app_bar" BorderPane.alignment="CENTER">
          <children>
@@ -225,158 +219,6 @@
       </VBox>
    </left>
    <center>
-      <VBox fx:id="dashboardPane" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" styleClass="container_style">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0">
-                     <children>
-                        <Label text="Total de Itens " textFill="WHITE">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <FontIcon iconColor="WHITE" iconLiteral="mdi2f-format-list-checkbox" iconSize="30">
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </FontIcon>
-                        <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <Pane maxHeight="100.0" prefHeight="100.0" prefWidth="2.0" style="-fx-background-color: rgba(255,255,255,0.3);" />
-                  <VBox alignment="CENTER" layoutX="389.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
-                     <children>
-                        <Label text="Itens disponíveis" textFill="WHITE">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <FontIcon iconColor="WHITE" iconLiteral="mdi2f-format-list-checks" iconSize="30">
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </FontIcon>
-                        <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="15478" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <Pane layoutX="539.0" layoutY="35.0" maxHeight="100.0" prefHeight="100.0" prefWidth="2.0" style="-fx-background-color: rgba(255,255,255,0.3);" />
-                  <VBox alignment="CENTER" layoutX="465.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
-                     <children>
-                        <Label text="Estoque Baixo" textFill="WHITE">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <FontIcon iconColor="WHITE" iconLiteral="mdi2a-alarm-light-outline" iconSize="30">
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </FontIcon>
-                        <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="42" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <Pane layoutX="615.0" layoutY="35.0" maxHeight="100.0" prefHeight="100.0" prefWidth="2.0" style="-fx-background-color: rgba(255,255,255,0.3);" />
-                  <VBox alignment="CENTER" layoutX="541.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
-                     <children>
-                        <Label text="Pedidos Recentes" textFill="WHITE">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <FontIcon iconColor="WHITE" iconLiteral="mdi2c-calendar-clock" iconSize="30">
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </FontIcon>
-                        <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="250.0" prefWidth="200.0" spacing="20.0">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container_style" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Label styleClass="shadow" text="Movimentação Semanal" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <LineChart styleClass="line_chart">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" tickLabelFill="WHITE" />
-                          </yAxis>
-                        </LineChart>
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="container_style" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Label styleClass="shadow" text="Pedidos por Categoria" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <PieChart styleClass="pie_chart" />
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-               </children>
-            </HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container_style" VBox.vgrow="ALWAYS">
-               <children>
-                  <Label styleClass="shadow" text="Ultimos Pedidos" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TableView prefHeight="200.0" prefWidth="200.0" styleClass="table_view" VBox.vgrow="ALWAYS">
-                    <columns>
-                      <TableColumn prefWidth="287.0" text="Material" />
-                      <TableColumn prefWidth="185.0" text="Tipo" />
-                        <TableColumn prefWidth="185.0" text="Quantidade" />
-                        <TableColumn prefWidth="185.0" text="Data" />
-                    </columns>
-                  </TableView>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </VBox>
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="20.0" right="20.0" top="20.0" />
-         </BorderPane.margin>
-      </VBox>
+
    </center>
 </BorderPane>

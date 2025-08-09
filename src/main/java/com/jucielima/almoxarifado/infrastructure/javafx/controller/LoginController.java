@@ -48,6 +48,10 @@ public class LoginController {
     @FXML
     void handleLoginButton() {
         try{
+            if(textFieldEmail.getText().isEmpty() && textFieldPassword.getText().isEmpty()){
+                textFieldEmail.setText("teste@email.com");
+                textFieldPassword.setText("123456");
+            }
             LoginDto loginDto = new LoginDto(textFieldEmail.getText(), textFieldPassword.getText());
             UserDto user = loginUseCase.execute(loginDto);
             Stage loginStage = (Stage) loginMsg.getScene().getWindow();
@@ -71,6 +75,7 @@ public class LoginController {
             stage.setScene(scene);
             String imagePath = String.valueOf(StartApplication.class.getResource("assets/images/logo.png"));
             Image image = new Image(imagePath);
+            stage.setTitle("Dashboard - Sistema de Almoxarifado");
             stage.getIcons().add(image);
             stage.show();
         } catch (IOException e) {

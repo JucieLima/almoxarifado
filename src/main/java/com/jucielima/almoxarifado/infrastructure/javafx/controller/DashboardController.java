@@ -1,61 +1,81 @@
 package com.jucielima.almoxarifado.infrastructure.javafx.controller;
 
 import com.jucielima.almoxarifado.application.dto.UserDto;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 import lombok.Setter;
 import org.springframework.stereotype.Controller;
 
-@Controller
-public class DashboardController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+@Controller
+public class DashboardController implements Initializable {
+
+    @FXML
+    public BorderPane mainPane;
     @Setter
     private UserDto userDto;
 
     @FXML
-    void handleMenuCategories(MouseEvent event) {
-
+    void handleMenuCategories() {
+        replaceMainContent("/com/jucielima/almoxarifado/categories/categories.fxml");
     }
 
     @FXML
-    void handleMenuChangePassword(ActionEvent event) {
-
+    void handleMenuChangePassword() {
+        //todo
     }
 
     @FXML
-    void handleMenuDashboard(MouseEvent event) {
-
+    void handleMenuDashboard() {
+        replaceMainContent("/com/jucielima/almoxarifado/dashboard/home.fxml");
     }
 
     @FXML
-    void handleMenuExit(MouseEvent event) {
-
+    void handleMenuExit() {
+        //todo
     }
 
     @FXML
-    void handleMenuMaterials(MouseEvent event) {
-
+    void handleMenuMaterials() {
+        replaceMainContent("/com/jucielima/almoxarifado/materiais/materiais.fxml");
     }
 
     @FXML
-    void handleMenuOrders(MouseEvent event) {
-
+    void handleMenuOrders() {
+       //todo
     }
 
     @FXML
-    void handleMenuProfile(ActionEvent event) {
-
+    void handleMenuProfile() {
+        //todo
     }
 
     @FXML
-    void handleMenuReports(MouseEvent event) {
-
+    void handleMenuReports() {
+        replaceMainContent("/com/jucielima/almoxarifado/reports/reports_index.fxml");
     }
 
     @FXML
-    void handleMenuUsers(MouseEvent event) {
-
+    void handleMenuUsers() {
+        replaceMainContent("/com/jucielima/almoxarifado/users/users.fxml");
     }
 
+    private void replaceMainContent(String address) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(address));
+        try {
+            mainPane.centerProperty().setValue(fxmlLoader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        handleMenuDashboard();
+    }
 }
