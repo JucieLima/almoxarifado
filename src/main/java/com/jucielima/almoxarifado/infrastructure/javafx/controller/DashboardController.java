@@ -1,10 +1,17 @@
 package com.jucielima.almoxarifado.infrastructure.javafx.controller;
 
+import com.jucielima.almoxarifado.application.dto.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import lombok.Setter;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class DashboardController {
+
+    @Setter
+    private UserDto userDto;
 
     @FXML
     void handleMenuCategories(MouseEvent event) {

@@ -3,6 +3,7 @@ package com.jucielima.almoxarifado;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +22,10 @@ public class StartApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("auth/login.fxml"));
         fxmlLoader.setControllerFactory(applicationContext::getBean);
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
-        stage.setTitle("Hello!");
+        stage.setTitle("Login - Sistema de Almoxarifado!");
+        String imagePath = String.valueOf(StartApplication.class.getResource("assets/images/logo.png"));
+        Image image = new Image(imagePath);
+        stage.getIcons().add(image);
         stage.setScene(scene);
         stage.show();
     }

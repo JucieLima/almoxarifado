@@ -13,6 +13,7 @@
 <?import javafx.scene.text.TextFlow?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
+<?import javafx.scene.control.PasswordField?>
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.LoginController">
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #159A9C;" HBox.hgrow="ALWAYS">
@@ -49,11 +50,11 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="textFieldPassword" layoutX="100.0" layoutY="291.0" onAction="#handleLoginButton" promptText="Senha" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
+            <PasswordField fx:id="textFieldPassword" layoutX="100.0" layoutY="291.0" onAction="#handleLoginButton" promptText="Senha" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
                <font>
                   <Font size="18.0" />
                </font>
-            </TextField>
+            </PasswordField>
             <FontIcon iconColor="#002333" iconLiteral="mdi2f-form-textbox-password" iconSize="30" layoutX="60.0" layoutY="321.0" AnchorPane.leftAnchor="60.0" />
             <Button layoutX="60.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleLoginButton" text="ENTRAR" textFill="#002333" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
                <font>
