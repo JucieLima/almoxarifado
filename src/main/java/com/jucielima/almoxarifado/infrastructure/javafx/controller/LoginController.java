@@ -1,9 +1,13 @@
 package com.jucielima.almoxarifado.infrastructure.javafx.controller;
 
 import com.jucielima.almoxarifado.StartApplication;
+import com.jucielima.almoxarifado.application.dto.LogDto;
 import com.jucielima.almoxarifado.application.dto.LoginDto;
 import com.jucielima.almoxarifado.application.dto.UserDto;
+import com.jucielima.almoxarifado.application.usecase.LogUseCase;
 import com.jucielima.almoxarifado.application.usecase.LoginUseCase;
+import com.jucielima.almoxarifado.domain.enums.LogLevel;
+import com.jucielima.almoxarifado.domain.enums.LogType;
 import com.jucielima.almoxarifado.domain.exception.InvalidLoginArgumentsException;
 import com.jucielima.almoxarifado.domain.exception.UserNotFoundException;
 import javafx.fxml.FXML;
@@ -34,10 +38,12 @@ public class LoginController {
 
     private final LoginUseCase loginUseCase;
     private final ConfigurableApplicationContext applicationContext;
+    private final LogUseCase logUseCase;
 
-    public LoginController(LoginUseCase loginUseCase, ConfigurableApplicationContext applicationContext) {
+    public LoginController(LoginUseCase loginUseCase, ConfigurableApplicationContext applicationContext, LogUseCase logUseCase) {
         this.loginUseCase = loginUseCase;
         this.applicationContext = applicationContext;
+        this.logUseCase = logUseCase;
     }
 
     @FXML
@@ -57,9 +63,11 @@ public class LoginController {
             Stage loginStage = (Stage) loginMsg.getScene().getWindow();
             loginStage.close();
             openDashboardScreen(user);
+            logUseCase.execute(new LogDto("Usuário logado - " + user.email(), LogLevel.INFO, LogType.AUTHENTICATION));
         }catch (UserNotFoundException | InvalidLoginArgumentsException exception){
             loginMsg.setVisible(true);
             setTimeout(()-> loginMsg.setVisible(false));
+            logUseCase.execute(new LogDto(exception.getMessage(), LogLevel.WARNING, LogType.AUTHENTICATION));
         }
     }
 
