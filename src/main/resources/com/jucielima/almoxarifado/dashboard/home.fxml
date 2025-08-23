@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.geometry.Insets?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.HomeController" fx:id="dashboardPane" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+
+<VBox fx:id="dashboardPane" prefHeight="800.0" prefWidth="900.0" spacing="20.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.HomeController">
         <children>
             <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" styleClass="container_style">
                 <children>
@@ -28,7 +31,7 @@
                                     <Insets bottom="10.0" top="10.0" />
                                 </VBox.margin>
                             </FontIcon>
-                            <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
+                            <Label fx:id="totalItems" layoutX="35.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
                                 <font>
                                     <Font size="18.0" />
                                 </font>
@@ -48,7 +51,7 @@
                                     <Insets bottom="10.0" top="10.0" />
                                 </VBox.margin>
                             </FontIcon>
-                            <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="15478" textFill="WHITE">
+                            <Label fx:id="availableItems" layoutX="35.0" layoutY="58.0" styleClass="shadow" text="15478" textFill="WHITE">
                                 <font>
                                     <Font size="18.0" />
                                 </font>
@@ -68,7 +71,7 @@
                                     <Insets bottom="10.0" top="10.0" />
                                 </VBox.margin>
                             </FontIcon>
-                            <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="42" textFill="WHITE">
+                            <Label fx:id="minimumStock" layoutX="35.0" layoutY="58.0" styleClass="shadow" text="42" textFill="WHITE">
                                 <font>
                                     <Font size="18.0" />
                                 </font>
@@ -88,7 +91,7 @@
                                     <Insets bottom="10.0" top="10.0" />
                                 </VBox.margin>
                             </FontIcon>
-                            <Label layoutX="35.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
+                            <Label fx:id="recentOrders" layoutX="35.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
                                 <font>
                                     <Font size="18.0" />
                                 </font>
@@ -106,7 +109,7 @@
                                     <Font size="18.0" />
                                 </font>
                             </Label>
-                            <LineChart styleClass="line_chart">
+                            <LineChart fx:id="lineChart" styleClass="line_chart">
                                 <xAxis>
                                     <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" />
                                 </xAxis>
@@ -126,7 +129,7 @@
                                     <Font size="18.0" />
                                 </font>
                             </Label>
-                            <PieChart styleClass="pie_chart" />
+                            <PieChart fx:id="pieChart" styleClass="pie_chart" />
                         </children>
                         <padding>
                             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -144,12 +147,14 @@
                             <Insets bottom="10.0" />
                         </VBox.margin>
                     </Label>
-                    <TableView prefHeight="200.0" prefWidth="200.0" styleClass="table_view" VBox.vgrow="ALWAYS">
+                    <TableView fx:id="tableViewOrders" prefHeight="200.0" prefWidth="200.0" styleClass="table_view" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn prefWidth="287.0" text="Material" />
-                            <TableColumn prefWidth="185.0" text="Tipo" />
-                            <TableColumn prefWidth="185.0" text="Quantidade" />
-                            <TableColumn prefWidth="185.0" text="Data" />
+                            <TableColumn fx:id="tableColumnMaterial" prefWidth="245.0" text="Material" />
+                            <TableColumn fx:id="tableColumnCategory" prefWidth="126.0" text="Categoria" />
+                  <TableColumn fx:id="tableColumnAuthor" prefWidth="124.0" text="Autor" />
+                  <TableColumn fx:id="tableColumnStatus" prefWidth="124.0" text="Status" />
+                            <TableColumn fx:id="tableColumnAmount" prefWidth="194.0" text="Quantidade" />
+                            <TableColumn fx:id="tableColumnDate" prefWidth="150.0" text="Data" />
                         </columns>
                     </TableView>
                 </children>
