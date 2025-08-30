@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox fx:id="dashboardPane" prefHeight="800.0" prefWidth="900.0" spacing="20.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.HomeController">
+<VBox fx:id="dashboardPane" prefHeight="800.0" prefWidth="900.0" spacing="20.0" stylesheets="@../assets/styles/stylesheet.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jucielima.almoxarifado.infrastructure.javafx.controller.HomeController">
         <children>
             <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" styleClass="container_style">
                 <children>

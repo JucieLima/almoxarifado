@@ -8,7 +8,7 @@ public class OrderViewModel {
     StringProperty material = new SimpleStringProperty();
     StringProperty category = new SimpleStringProperty();
     StringProperty author = new SimpleStringProperty();
-    StringProperty staus = new SimpleStringProperty();
+    StringProperty status = new SimpleStringProperty();
     IntegerProperty amount = new SimpleIntegerProperty();
     ObjectProperty<LocalDateTime> date = new SimpleObjectProperty<>();
 
@@ -48,16 +48,16 @@ public class OrderViewModel {
         this.author.set(author);
     }
 
-    public String getStaus() {
-        return staus.get();
+    public String getStatus() {
+        return status.get();
     }
 
-    public StringProperty stausProperty() {
-        return staus;
+    public StringProperty statusProperty() {
+        return status;
     }
 
-    public void setStaus(String staus) {
-        this.staus.set(staus);
+    public void setStatus(String status) {
+        this.status.set(status);
     }
 
     public int getAmount() {

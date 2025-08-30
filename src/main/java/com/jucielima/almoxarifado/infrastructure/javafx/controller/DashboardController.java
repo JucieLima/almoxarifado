@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
 import lombok.Setter;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
@@ -15,10 +16,15 @@ import java.util.ResourceBundle;
 @Controller
 public class DashboardController implements Initializable {
 
+    private final ConfigurableApplicationContext applicationContext;
     @FXML
     public BorderPane mainPane;
     @Setter
     private UserDto userDto;
+
+    public DashboardController(ConfigurableApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
 
     @FXML
     void handleMenuCategories() {
@@ -67,6 +73,7 @@ public class DashboardController implements Initializable {
 
     private void replaceMainContent(String address) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(address));
+        fxmlLoader.setControllerFactory(applicationContext::getBean);
         try {
             mainPane.centerProperty().setValue(fxmlLoader.load());
         } catch (IOException e) {

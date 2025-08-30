@@ -13,6 +13,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
+import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+@Controller
 public class HomeController implements Initializable {
 
     @FXML
@@ -118,7 +120,7 @@ public class HomeController implements Initializable {
             model.setMaterial("Folhas A4 500");
             model.setCategory("Escritório");
             model.setAuthor("Juciê Lima");
-            model.setStaus("Entregue");
+            model.setStatus("Entregue");
             model.setAmount(12);
             model.setDate(LocalDateTime.now());
             modelList.add(model);
@@ -130,7 +132,7 @@ public class HomeController implements Initializable {
         tableColumnMaterial.setCellValueFactory(cell->cell.getValue().materialProperty());
         tableColumnCategory.setCellValueFactory(cell->cell.getValue().categoryProperty());
         tableColumnAuthor.setCellValueFactory(cell->cell.getValue().authorProperty());
-        tableColumnStatus.setCellValueFactory(cell->cell.getValue().stausProperty());
+        tableColumnStatus.setCellValueFactory(cell->cell.getValue().statusProperty());
         tableColumnAmount.setCellValueFactory(cell->cell.getValue().amountProperty().asObject());
         tableColumnDate.setCellValueFactory(cell->cell.getValue().dateProperty());
         tableColumnDate.setCellFactory(cell->formatterDate());
